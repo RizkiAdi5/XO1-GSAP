@@ -1,0 +1,118 @@
+{
+  "home": {
+    "badge": "Open to opportunities",
+    "headline": "Frontend engineer who understands how businesses run.",
+    "subhead": "ERP, accounting and business systems, built with craft.",
+    "seeWork": "See work",
+    "marquee": ["ERP", "Accounting", "POS", "E-Invoicing", "Next.js", "Go"],
+    "selectedWork": "Selected work",
+    "numbers": [
+      { "value": "70+", "label": "ERP screens modernized" },
+      { "value": "80%", "label": "Faster POS checkout" },
+      { "value": "70%", "label": "Less manual invoice entry" },
+      { "value": "1,000+", "label": "Orders processed" }
+    ],
+    "whatIDo": {
+      "title": "What I do",
+      "items": [
+        { "title": "Frontend engineering", "desc": "Fast, accessible interfaces built with craft and motion." },
+        { "title": "ERP & system integration", "desc": "Connecting business systems so data moves without friction." },
+        { "title": "Business systems for SMEs", "desc": "Practical tools that fit how small businesses actually run." },
+        { "title": "Team & project leadership", "desc": "Leading delivery across markets and small teams." }
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "current": "Netiquette Asia — Software Developer + Indonesia Market Lead",
+      "campus": "Campus organizations — BEM Faculty of Computer Science, Investment Club",
+      "more": "More about me"
+    },
+    "contactWords": ["build", "ship", "launch", "grow"],
+    "contactCta": "Have a project in mind?"
+  },
+  "work": {
+    "title": "Work",
+    "intro": "Selected case studies, plus a short archive of earlier projects.",
+    "featuredTitle": "Selected work",
+    "archiveTitle": "Archive",
+    "filters": { "all": "All", "frontend": "Frontend", "erp": "ERP", "fullstack": "Full-stack" }
+  },
+  "about": {
+    "title": "About",
+    "bio": "I'm a frontend engineer who understands how businesses run — from ERP screens finance teams use every day, to POS systems processing high order volumes. I currently work as a Software Developer and Indonesia Market Lead at Netiquette Asia, after a path that started at Darussalam Sengkubang, continued through President University and the PUFA Computer Science program, and now spans teams across time zones.",
+    "journeyTitle": "Journey",
+    "journey": [
+      { "year": "2020", "label": "Darussalam Sengkubang" },
+      { "year": "2023", "label": "President University" },
+      { "year": "2024", "label": "PUFA Computer Science" },
+      { "year": "2025", "label": "Netiquette Asia — Software Developer" },
+      { "year": "2026", "label": "Indonesia Market Lead" }
+    ],
+    "skillsTitle": "Skills",
+    "skills": [
+      { "group": "Frontend", "items": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "GSAP"] },
+      { "group": "Backend & API", "items": ["Go", "PHP (Laravel)", "ColdFusion", "REST API", "JWT"] },
+      { "group": "Database", "items": ["PostgreSQL", "MySQL", "SQL"] },
+      { "group": "ERP & domain", "items": ["Epicor ERP", "OCR", "Peppol / e-invoicing", "POS systems"] },
+      { "group": "Leadership", "items": ["Team lead", "Project management", "Market lead"] }
+    ],
+    "educationTitle": "Education",
+    "education": {
+      "program": "Information Systems (ERP concentration)",
+      "gpa": "GPA 3.95",
+      "scholarship": "Jababeka Future Leader Scholarship"
+    },
+    "orgsTitle": "Organizations",
+    "orgs": ["BEM Faculty of Computer Science", "Investment Club"],
+    "certificationsTitle": "Certifications",
+    "certifications": [
+      "Google Project Management (Coursera)",
+      "Alibaba Cloud Certified Developer",
+      "Core HR & Analytics"
+    ],
+    "languagesTitle": "Languages",
+    "languages": [
+      { "lang": "English", "level": "Professional" },
+      { "lang": "Indonesian", "level": "Native" }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Let's talk about your next project.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "type": "Type",
+      "typePlaceholder": "Select one",
+      "typeJob": "Job opportunity",
+      "typeFreelance": "Freelance project",
+      "typeOther": "Other",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "successTitle": "Thanks — message received.",
+      "successEta": "I usually reply within 1–2 business days (GMT+7).",
+      "error": "Something went wrong. Email me directly at"
+    },
+    "channels": {
+      "title": "Other ways to reach me",
+      "timezone": "Based in Cikarang, Indonesia · GMT+7",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "nav": { "home": "Home", "work": "Work", "about": "About", "contact": "Contact" },
+  "header": { "letsTalk": "Let's talk" },
+  "menu": { "open": "Menu", "close": "Close", "startProject": "Start a project" },
+  "marquee": { "pause": "Pause", "play": "Play" },
+  "caseStudy": { "next": "Next case study" },
+  "footer": {
+    "ctaPrefix": "Let's build something",
+    "ctaWords": ["together", "great", "real", "lasting"],
+    "tagline": "Frontend engineer who understands how businesses run — ERP, accounting and business systems, built with craft.",
+    "navigate": "Navigate",
+    "location": "Cikarang, Indonesia · GMT+7",
+    "copyright": "© {year} Rizki Adi Prasetyo. All rights reserved."
+  }
+}

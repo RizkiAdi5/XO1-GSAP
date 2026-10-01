@@ -1,26 +1,127 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #F4F3EF;
+  --surface: #FFFFFF;
+  --ink: #111111;
+  --muted: #6B6B6B;
+  --line: #E2E0DA;
+  --accent: #2F45FF;
+
+  --radius-ui: 4px;
+  --radius-card: 12px;
+
+  /* Motion tokens (CSS form) — mirror lib/motion.ts for pure-CSS
+     components (RollText) that can't consume the JS object. Keep values
+     numerically identical if either changes. */
+  --duration-fast: 0.35s;
+  --duration-base: 0.7s;
+  --duration-slow: 1.2s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.7, 0, 0.2, 1);
+
+  /* Locally embedded SF Pro Rounded (see app/[locale]/layout.tsx,
+     next/font/local) — only the Bold (700) weight is available.
+     ui-rounded/system fallback kept after it in case the local font
+     somehow fails to load. */
+  --font-rounded: var(--font-sf-pro-rounded), ui-rounded, var(--font-geist-sans), sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-ui: var(--radius-ui);
+  --radius-card: var(--radius-card);
+
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-instrument-serif);
+  --font-rounded: var(--font-rounded);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* SF Pro Rounded is the primary font for ALL headings/titles sitewide
+   (h1 through h6) — section titles, card titles, MDX case-study
+   headings, etc. Body copy (p, li, form fields, ...) is untouched here
+   and keeps --font-sans (Geist) from the `body` rule above. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-rounded);
+}
+
+/* Page transition (View Transitions API):
+   - OLD page: shrinks back + frosted-glass blur (pushed away/receding).
+   - NEW page: still rises from the bottom (clip-path inset, rounded left
+     /right while mid-animation) like before, filling the screen as it
+     settles.
+   Header is NOT excluded — it's part of the whole-page snapshot, so it
+   shrinks/glasses or rises along with everything else, same as content.
+
+   Duration/easing deliberately NOT the shared --duration-slow/--ease-out
+   tokens — this should feel heavy/weighted: a slow, long decelerate
+   rather than the snappier curve used by hero/card/etc.
+   See components/motion/PageTransitions.tsx. */
+
+/* Browser default clips old/new to their own box (overflow: hidden on
+   the internal image-pair wrapper) — that was eating the box-shadow and
+   making the scale-down on the new page invisible. Opt out so effects
+   that extend past the box (shadow, the visible size difference while
+   scaled down) actually render. */
+::view-transition-image-pair(root) {
+  overflow: visible;
+}
+
+::view-transition-old(root) {
+  animation: page-glass-shrink 2.6s cubic-bezier(0.16, 0.84, 0.1, 1) both;
+  transform-origin: center;
+}
+
+::view-transition-new(root) {
+  animation: page-rise 2.6s cubic-bezier(0.16, 0.84, 0.1, 1) both;
+  /* Same --bg color on both pages means the scaled-down edge is
+     invisible without a shadow to separate it from what's behind. */
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes page-glass-shrink {
+  from {
+    transform: scale(1);
+    filter: blur(0) brightness(1);
+    border-radius: 0;
+  }
+  to {
+    transform: scale(0.88);
+    filter: blur(14px) brightness(0.85);
+    border-radius: 32px;
+  }
+}
+
+@keyframes page-rise {
+  from {
+    clip-path: inset(0 24px 0 24px round 32px);
+    transform: translateY(100%) scale(0.85);
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root) {
+    animation-duration: 0.01ms !important;
+  }
 }

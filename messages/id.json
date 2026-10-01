@@ -1,0 +1,118 @@
+{
+  "home": {
+    "badge": "Terbuka untuk peluang baru",
+    "headline": "Frontend engineer yang paham cara bisnis berjalan.",
+    "subhead": "Sistem ERP, akuntansi, dan bisnis, dibangun dengan detail.",
+    "seeWork": "Lihat karya",
+    "marquee": ["ERP", "Akuntansi", "POS", "E-Invoicing", "Next.js", "Go"],
+    "selectedWork": "Karya pilihan",
+    "numbers": [
+      { "value": "70+", "label": "Layar ERP dimodernisasi" },
+      { "value": "80%", "label": "Checkout POS lebih cepat" },
+      { "value": "70%", "label": "Input invoice manual berkurang" },
+      { "value": "1.000+", "label": "Order diproses" }
+    ],
+    "whatIDo": {
+      "title": "Yang saya kerjakan",
+      "items": [
+        { "title": "Frontend engineering", "desc": "Antarmuka cepat dan aksesibel, dibangun dengan detail dan motion." },
+        { "title": "ERP & integrasi sistem", "desc": "Menghubungkan sistem bisnis biar data mengalir tanpa hambatan." },
+        { "title": "Sistem bisnis untuk UMKM", "desc": "Alat praktis yang sesuai cara UMKM beneran berjalan." },
+        { "title": "Kepemimpinan tim & proyek", "desc": "Memimpin delivery lintas negara dan tim kecil." }
+      ]
+    },
+    "experience": {
+      "title": "Pengalaman",
+      "current": "Netiquette Asia — Software Developer + Indonesia Market Lead",
+      "campus": "Organisasi kampus — BEM Fakultas Ilmu Komputer, Investment Club",
+      "more": "Selengkapnya tentang saya"
+    },
+    "contactWords": ["bangun", "kirim", "luncurkan", "kembangkan"],
+    "contactCta": "Ada project yang ingin didiskusikan?"
+  },
+  "work": {
+    "title": "Karya",
+    "intro": "Case study pilihan, plus arsip singkat proyek-proyek sebelumnya.",
+    "featuredTitle": "Karya pilihan",
+    "archiveTitle": "Arsip",
+    "filters": { "all": "Semua", "frontend": "Frontend", "erp": "ERP", "fullstack": "Full-stack" }
+  },
+  "about": {
+    "title": "Tentang",
+    "bio": "Saya frontend engineer yang paham cara bisnis berjalan — mulai dari layar ERP yang dipakai tim finance tiap hari, sampai sistem POS yang memproses volume order tinggi. Saat ini saya Software Developer dan Indonesia Market Lead di Netiquette Asia, setelah perjalanan yang dimulai dari Darussalam Sengkubang, lanjut ke President University dan program PUFA Computer Science, dan sekarang bekerja lintas zona waktu.",
+    "journeyTitle": "Perjalanan",
+    "journey": [
+      { "year": "2020", "label": "Darussalam Sengkubang" },
+      { "year": "2023", "label": "President University" },
+      { "year": "2024", "label": "PUFA Computer Science" },
+      { "year": "2025", "label": "Netiquette Asia — Software Developer" },
+      { "year": "2026", "label": "Indonesia Market Lead" }
+    ],
+    "skillsTitle": "Skill",
+    "skills": [
+      { "group": "Frontend", "items": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "GSAP"] },
+      { "group": "Backend & API", "items": ["Go", "PHP (Laravel)", "ColdFusion", "REST API", "JWT"] },
+      { "group": "Database", "items": ["PostgreSQL", "MySQL", "SQL"] },
+      { "group": "ERP & domain", "items": ["Epicor ERP", "OCR", "Peppol / e-invoicing", "Sistem POS"] },
+      { "group": "Leadership", "items": ["Team lead", "Project management", "Market lead"] }
+    ],
+    "educationTitle": "Pendidikan",
+    "education": {
+      "program": "Sistem Informasi (konsentrasi ERP)",
+      "gpa": "IPK 3,95",
+      "scholarship": "Jababeka Future Leader Scholarship"
+    },
+    "orgsTitle": "Organisasi",
+    "orgs": ["BEM Fakultas Ilmu Komputer", "Investment Club"],
+    "certificationsTitle": "Sertifikasi",
+    "certifications": [
+      "Google Project Management (Coursera)",
+      "Alibaba Cloud Certified Developer",
+      "Core HR & Analytics"
+    ],
+    "languagesTitle": "Bahasa",
+    "languages": [
+      { "lang": "Inggris", "level": "Profesional" },
+      { "lang": "Indonesia", "level": "Native" }
+    ]
+  },
+  "contact": {
+    "title": "Kontak",
+    "intro": "Yuk diskusikan project kamu selanjutnya.",
+    "form": {
+      "name": "Nama",
+      "email": "Email",
+      "type": "Tipe",
+      "typePlaceholder": "Pilih salah satu",
+      "typeJob": "Peluang kerja",
+      "typeFreelance": "Project freelance",
+      "typeOther": "Lainnya",
+      "message": "Pesan",
+      "submit": "Kirim pesan",
+      "sending": "Mengirim…",
+      "successTitle": "Terima kasih — pesan diterima.",
+      "successEta": "Biasanya saya balas dalam 1–2 hari kerja (GMT+7).",
+      "error": "Ada yang salah. Email saya langsung ke"
+    },
+    "channels": {
+      "title": "Cara lain menghubungi saya",
+      "timezone": "Berdomisili di Cikarang, Indonesia · GMT+7",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "nav": { "home": "Beranda", "work": "Karya", "about": "Tentang", "contact": "Kontak" },
+  "header": { "letsTalk": "Hubungi saya" },
+  "menu": { "open": "Menu", "close": "Tutup", "startProject": "Mulai project" },
+  "marquee": { "pause": "Jeda", "play": "Putar" },
+  "caseStudy": { "next": "Case study selanjutnya" },
+  "footer": {
+    "ctaPrefix": "Yuk, bangun sesuatu yang",
+    "ctaWords": ["bareng", "hebat", "nyata", "berkelanjutan"],
+    "tagline": "Frontend engineer yang paham cara bisnis berjalan — sistem ERP, akuntansi, dan bisnis, dibangun dengan detail.",
+    "navigate": "Jelajahi",
+    "location": "Cikarang, Indonesia · GMT+7",
+    "copyright": "© {year} Rizki Adi Prasetyo. Hak cipta dilindungi."
+  }
+}
