@@ -85,3 +85,33 @@ riwayat kerja atau sekolah.
 - **Perlu dicek Rizki:** langkah 4 menjanjikan "documentation and a
   walkthrough". PDF menyebut dokumentasi di project Epicor, tapi pastikan
   memang selalu dikasih ke klien.
+
+## Update: About diringkas, ikut struktur upsunday.co/about
+Rizki: tulisannya kepanjangan. Referensi upsunday.co/about dibuka & dibedah:
+tiap section = label kecil (eyebrow) + headline besar dengan 1 kata
+ditekankan + maksimal 2 kalimat + elemen visual. Strukturnya ditiru, isinya
+punya Rizki sendiri.
+- Hero: "About" + **tagline 1 kalimat** (bio 3 paragraf dihapus).
+- "In short": headline "Software that fits how your business *runs*" +
+  2 kalimat + tombol See my work / Start a project.
+- "Track record": baris angka besar, ambil dari `home.numbers`, jadi
+  angkanya satu sumber dengan Home.
+- "How I work": deskripsi tiap langkah dipendekkan jadi 1 kalimat.
+- Industries / Skills / Languages tetap, judulnya jadi eyebrow kecil.
+- Kata yang ditekankan pakai `<em>` di pesan → `t.rich` → Instrument
+  Serif italic aksen (sama seperti judul FAQ Contact).
+- Bug ikut ketemu & diperbaiki di `Odometer`: "+", "%", "," posisinya
+  lebih rendah dari angka (inline-block overflow-hidden disejajarkan dari
+  tepi bawah). Sekarang semua karakter kotak 1em, rata atas.
+
+## Update: foto + profil singkat ("Behind the work")
+- Mengikuti section "Leadership" upsunday: foto kiri (5/12, rasio 4:5,
+  rounded), kanan eyebrow + nama besar + peran (warna aksen) + 2 paragraf.
+  Posisinya setelah "How I work", sebelum Industries.
+- Foto: `public/images/rizki-portrait.jpg`, 896×1195 (ukuran dari chat),
+  dikompres jadi 78 KB. Pakai `next/image` static import + `placeholder="blur"`
+  dan `sizes`. Alt text deskriptif per bahasa.
+- Profil sengaja **pengalaman kerja yang relevan buat klien**, bukan CV:
+  peran sekarang di Netiquette Asia + apa yang dikerjakan, lalu project
+  yang pernah dipimpin/dibangun. Sekolah/kampus tetap nggak disebut. Tanpa
+  angka "x tahun pengalaman" karena nggak ada datanya.

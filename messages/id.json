@@ -54,18 +54,32 @@
   },
   "about": {
     "title": "Tentang",
-    "bio": [
-      "Saya software developer yang paham cara bisnis berjalan. Yang saya perhatikan adalah kerja di balik layar: bagaimana order berpindah dari kasir ke pembukuan, bagaimana stok dihitung, dan bagaimana laporan sampai ke meja manajer.",
-      "Kebanyakan project saya dimulai dari proses yang terlalu makan waktu. Saya petakan, saya sederhanakan, lalu saya bangun website, dashboard, atau modul ERP yang menjalankannya. Produksi, penjualan, pengadaan, dan keuangan adalah area yang paling saya kuasai.",
-      "Saya kerja lintas stack dan terbiasa memimpin tim kecil, menjaga rencana tetap jelas dan klien selalu tahu progresnya dari call pertama sampai rilis."
-    ],
-    "approachTitle": "Cara saya bekerja",
+    "tagline": "Website, dashboard, dan sistem ERP untuk bisnis yang sudah kewalahan dengan spreadsheet.",
+    "intro": {
+      "eyebrow": "Singkatnya",
+      "title": "Software yang pas dengan cara bisnis kamu <em>berjalan</em>",
+      "text": "Saya petakan cara kerja tim kamu hari ini, lalu bangun sistem yang menjalankannya. Produksi, penjualan, pengadaan, dan keuangan adalah area yang paling saya kuasai."
+    },
+    "numbers": { "eyebrow": "Rekam jejak", "title": "Angka dari project <em>nyata</em>" },
+    "approachEyebrow": "Cara saya bekerja",
+    "approachTitle": "Empat langkah dari call pertama sampai <em>rilis</em>",
     "approach": [
-      { "title": "Pahami bisnisnya", "desc": "Kita mulai dari cara tim kamu bekerja hari ini: siapa mengerjakan apa, di mana waktu terbuang, angka apa yang penting." },
-      { "title": "Petakan prosesnya", "desc": "Dari situ lahir alur kerja yang jelas dan rencana berisi cakupan dan timeline, sebelum satu baris kode pun ditulis." },
-      { "title": "Bangun dan hubungkan", "desc": "Website, dashboard, atau modul ERP dibangun, disambungkan ke data yang sudah ada, lalu dites dengan kasus nyata." },
-      { "title": "Rilis dan kembangkan", "desc": "Tim kamu dapat dokumentasi dan panduan pemakaian, dan sistemnya terus disempurnakan dari pemakaian nyata." }
+      { "title": "Pahami bisnisnya", "desc": "Call pertama soal tujuan kamu dan cara tim bekerja hari ini." },
+      { "title": "Petakan prosesnya", "desc": "Alur kerja, cakupan, dan timeline yang jelas sebelum ada kode." },
+      { "title": "Bangun dan hubungkan", "desc": "Sistemnya, tersambung ke data kamu dan dites dengan kasus nyata." },
+      { "title": "Rilis dan tumbuh", "desc": "Panduan untuk tim kamu, lalu sistemnya ikut tumbuh bersama bisnis kamu." }
     ],
+    "profile": {
+      "eyebrow": "Di balik karya",
+      "name": "Rizki Adi",
+      "role": "Software Developer, berbasis di Jakarta",
+      "photoAlt": "Rizki Adi, potret hitam putih dari belakang",
+      "text": [
+        "Saya membantu brand membangun dan mengembangkan bisnisnya lewat software yang pas dengan cara mereka bekerja.",
+        "Saya Software Developer sekaligus Indonesia Market Lead di Netiquette Asia, mengerjakan cloud ERP yang dipakai tim di beberapa negara. Sehari-hari itu berarti memodernisasi layar ERP, otomasi invoice, dan bekerja dengan klien lintas zona waktu.",
+        "Di luar itu, saya pernah memimpin tim 4 orang membangun sistem keuangan dan inventaris untuk pabrik baja, serta membangun sistem pesanan dan dashboard untuk bisnis laundry, kafe, dan restoran."
+      ]
+    },
     "industriesTitle": "Industri yang pernah saya tangani",
     "industries": ["Manufaktur", "Laundry & jasa", "Makanan & minuman", "Pendidikan", "Cloud ERP & akuntansi"],
     "skillsTitle": "Skill",

@@ -58,7 +58,11 @@ export default function Odometer({ value, className = "" }: OdometerProps) {
       {/* The real value, for screen readers and copy/paste. Without it, selecting
           the number copied every digit of every track ("0123456789…"). */}
       <span className="sr-only">{value}</span>
-      <span aria-hidden="true" className="inline-flex select-none items-baseline">
+      {/* Every char (digit or symbol) is the same 1em-tall, leading-none box,
+          top-aligned. Digits are overflow-hidden inline-blocks, which align by
+          their bottom edge, not the text baseline, so baseline alignment left
+          "+", "%" and "," sitting lower than the numbers. */}
+      <span aria-hidden="true" className="inline-flex select-none items-start">
         {chars.map((char, i) =>
           /\d/.test(char) ? (
             <span
@@ -78,7 +82,7 @@ export default function Odometer({ value, className = "" }: OdometerProps) {
               </span>
             </span>
           ) : (
-            <span key={i} className="inline-block">
+            <span key={i} className="inline-block h-[1em] leading-none">
               {char}
             </span>
           )

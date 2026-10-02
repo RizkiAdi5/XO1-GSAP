@@ -54,18 +54,32 @@
   },
   "about": {
     "title": "About",
-    "bio": [
-      "I'm a software developer who understands how businesses run. I care about the work behind the screen: how an order moves from the counter to the books, how stock gets counted, how a report lands on a manager's desk.",
-      "Most of my projects start with a process that eats too much time. I map it, simplify it, then build the website, dashboard or ERP module that runs it. Production, sales, procurement and finance are the areas I know best.",
-      "I work across the stack and I'm used to leading a small team, keeping the plan clear and the client in the loop from the first call to launch."
-    ],
-    "approachTitle": "How I work",
+    "tagline": "Websites, dashboards and ERP systems for businesses that have outgrown spreadsheets.",
+    "intro": {
+      "eyebrow": "In short",
+      "title": "Software that fits how your business <em>runs</em>",
+      "text": "I map how your team works today, then build the system that runs it. Production, sales, procurement and finance are the areas I know best."
+    },
+    "numbers": { "eyebrow": "Track record", "title": "Numbers from real <em>projects</em>" },
+    "approachEyebrow": "How I work",
+    "approachTitle": "Four steps from first call to <em>launch</em>",
     "approach": [
-      { "title": "Understand the business", "desc": "We start with how your team works today: who does what, where time gets lost, which numbers matter." },
-      { "title": "Map the process", "desc": "That turns into a clear workflow and a plan with scope and timeline, before any code is written." },
-      { "title": "Build and connect", "desc": "The website, dashboard or ERP module gets built, linked to the data you already have, and tested with real cases." },
-      { "title": "Launch and improve", "desc": "Your team gets documentation and a walkthrough, and the system keeps improving from real use." }
+      { "title": "Understand the business", "desc": "A first call about your goals and how your team works today." },
+      { "title": "Map the process", "desc": "A clear workflow, scope and timeline before any code." },
+      { "title": "Build and connect", "desc": "The system, linked to your data and tested with real cases." },
+      { "title": "Launch and grow", "desc": "A walkthrough for your team, then the system grows with your business." }
     ],
+    "profile": {
+      "eyebrow": "Behind the work",
+      "name": "Rizki Adi",
+      "role": "Software Developer, based in Jakarta",
+      "photoAlt": "Rizki Adi, black and white portrait from behind",
+      "text": [
+        "I help brands build and grow their business with software that fits how they work.",
+        "I'm a Software Developer and the Indonesia Market Lead at Netiquette Asia, where I work on a cloud ERP used by teams in several countries. Day to day that means modernizing ERP screens, invoice automation and working with clients across time zones.",
+        "Outside that, I've led a 4-person team on a finance and inventory system for a steel manufacturer, and built order and dashboard systems for laundry, café and restaurant businesses."
+      ]
+    },
     "industriesTitle": "Industries I've worked with",
     "industries": [
       "Manufacturing",
