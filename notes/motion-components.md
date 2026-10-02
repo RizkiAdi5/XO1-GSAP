@@ -508,3 +508,29 @@ Sekalian di CTA Home:
   kepotong jadi 2 baris sendiri) → **"Punya ide project?"**
 - Ukuran font `clamp(1.75rem, 7vw, 3.75rem)`: tiap baris tetap 1 baris
   sampai HP sekitar 360px, maksimal 60px (= `text-6xl` sebelumnya).
+
+## Fix page transition: "splash" halaman lama (2026-10-02)
+Gejala di live (rizkiadi.space): Home → klik Contact. Transisi naiknya
+halus, tapi **yang naik itu halaman Home**, baru setelah itu Contact
+tiba-tiba muncul. Direkam lewat CDP screencast di situs live: frame 229–804
+ms halaman barunya masih Home, Contact baru nongol sekitar 939 ms.
+
+Penyebab: callback `document.startViewTransition(() => router.push(...))`
+langsung selesai, padahal `router.push` itu async. Browser ngambil
+snapshot "halaman baru" waktu DOM masih Home. (Komentar `ponytail:` lama
+memang sudah memperingatkan ini.)
+
+Fix di `PageTransitions.tsx`:
+- Callback sekarang mengembalikan **Promise** yang baru resolve waktu
+  route benar-benar ter-commit. `useLayoutEffect` yang bergantung pada
+  `usePathname()` memanggil resolver-nya tepat setelah React menulis DOM
+  halaman baru, sebelum frame berikutnya. Jadi snapshot "baru" =
+  halaman tujuan.
+- Jaring pengaman `COMMIT_TIMEOUT_MS = 2500`: kalau route nggak pernah
+  commit (error, kasus khusus), promise tetap resolve. Chrome membatalkan
+  transisi kalau update callback lebih dari sekitar 4 detik.
+- Animasi CSS (`page-glass-shrink` / `page-rise`) nggak diubah.
+
+Verifikasi: rekam ulang navigasi yang sama di production build lokal.
+Halaman yang naik = Contact sejak frame pertama.
+**Catatan:** live baru beres setelah deploy ulang ke Vercel.
