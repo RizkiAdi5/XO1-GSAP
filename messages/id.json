@@ -54,15 +54,28 @@
   },
   "about": {
     "title": "Tentang",
-    "bio": "Saya software developer yang paham cara bisnis berjalan, mulai dari layar ERP yang dipakai tim finance tiap hari sampai sistem POS yang memproses order dalam volume tinggi. Saya kerja lintas stack, tapi yang bikin beda adalah kebiasaan memahami masalah bisnisnya dulu sebelum mulai nulis kode. Saya biasa kerja bareng tim di zona waktu yang berbeda.",
+    "bio": [
+      "Saya software developer yang paham cara bisnis berjalan. Yang saya perhatikan adalah kerja di balik layar: bagaimana order berpindah dari kasir ke pembukuan, bagaimana stok dihitung, dan bagaimana laporan sampai ke meja manajer.",
+      "Kebanyakan project saya dimulai dari proses yang terlalu makan waktu. Saya petakan, saya sederhanakan, lalu saya bangun website, dashboard, atau modul ERP yang menjalankannya. Produksi, penjualan, pengadaan, dan keuangan adalah area yang paling saya kuasai.",
+      "Saya kerja lintas stack dan terbiasa memimpin tim kecil, menjaga rencana tetap jelas dan klien selalu tahu progresnya dari call pertama sampai rilis."
+    ],
+    "approachTitle": "Cara saya bekerja",
+    "approach": [
+      { "title": "Pahami bisnisnya", "desc": "Kita mulai dari cara tim kamu bekerja hari ini: siapa mengerjakan apa, di mana waktu terbuang, angka apa yang penting." },
+      { "title": "Petakan prosesnya", "desc": "Dari situ lahir alur kerja yang jelas dan rencana berisi cakupan dan timeline, sebelum satu baris kode pun ditulis." },
+      { "title": "Bangun dan hubungkan", "desc": "Website, dashboard, atau modul ERP dibangun, disambungkan ke data yang sudah ada, lalu dites dengan kasus nyata." },
+      { "title": "Rilis dan kembangkan", "desc": "Tim kamu dapat dokumentasi dan panduan pemakaian, dan sistemnya terus disempurnakan dari pemakaian nyata." }
+    ],
+    "industriesTitle": "Industri yang pernah saya tangani",
+    "industries": ["Manufaktur", "Laundry & jasa", "Makanan & minuman", "Pendidikan", "Cloud ERP & akuntansi"],
     "skillsTitle": "Skill",
     "skills": [
       { "group": "Frontend", "items": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "GSAP"] },
-      { "group": "Backend & API", "items": ["Go", "PHP (Laravel)", "ColdFusion", "REST API", "JWT"] },
+      { "group": "Backend & API", "items": ["Go", "PHP (Laravel)", "ColdFusion", "REST API", "JWT", "Git & GitHub", "Docker"] },
       { "group": "Database", "items": ["PostgreSQL", "MySQL", "SQL"] },
-      { "group": "ERP & domain", "items": ["Epicor ERP", "OCR", "Peppol / e-invoicing", "Sistem POS"] },
+      { "group": "ERP & domain", "items": ["Epicor ERP", "OCR", "Peppol / e-invoicing", "Sistem POS", "Odoo"] },
       { "group": "Optimasi bisnis", "items": ["Analisis proses bisnis", "Desain alur kerja", "Otomasi proses", "Laporan & dashboard", "Manajemen data"] },
-      { "group": "Leadership", "items": ["Team lead", "Project management", "Market lead"] }
+      { "group": "Leadership", "items": ["Team lead", "Project management", "Market lead", "Trello", "Notion", "Miro"] }
     ],
     "languagesTitle": "Bahasa",
     "languages": [
@@ -81,7 +94,13 @@
       "subject": "Subjek",
       "subjectPlaceholder": "Contoh: Website baru untuk kafe saya",
       "type": "Butuh bantuan apa?",
-      "types": { "website": "Website", "dashboard": "Dashboard atau panel admin", "erp": "ERP atau sistem bisnis", "automation": "Otomasi proses", "other": "Lainnya" },
+      "types": {
+        "website": "Website",
+        "dashboard": "Dashboard atau panel admin",
+        "erp": "ERP atau sistem bisnis",
+        "automation": "Otomasi proses",
+        "other": "Lainnya"
+      },
       "message": "Pesan",
       "messagePlaceholder": "Ceritakan bisnis kamu dan apa yang ingin dibangun. Perkiraan timeline atau budget juga membantu.",
       "messageHint": "Minimal 20 karakter.",

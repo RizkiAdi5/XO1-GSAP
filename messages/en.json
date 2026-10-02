@@ -54,15 +54,34 @@
   },
   "about": {
     "title": "About",
-    "bio": "I'm a software developer who understands how businesses run, from the ERP screens finance teams rely on every day to POS systems handling high-volume orders. I work across the stack, but what sets me apart is reading the business problem before writing a line of code. I work with teams across different time zones.",
+    "bio": [
+      "I'm a software developer who understands how businesses run. I care about the work behind the screen: how an order moves from the counter to the books, how stock gets counted, how a report lands on a manager's desk.",
+      "Most of my projects start with a process that eats too much time. I map it, simplify it, then build the website, dashboard or ERP module that runs it. Production, sales, procurement and finance are the areas I know best.",
+      "I work across the stack and I'm used to leading a small team, keeping the plan clear and the client in the loop from the first call to launch."
+    ],
+    "approachTitle": "How I work",
+    "approach": [
+      { "title": "Understand the business", "desc": "We start with how your team works today: who does what, where time gets lost, which numbers matter." },
+      { "title": "Map the process", "desc": "That turns into a clear workflow and a plan with scope and timeline, before any code is written." },
+      { "title": "Build and connect", "desc": "The website, dashboard or ERP module gets built, linked to the data you already have, and tested with real cases." },
+      { "title": "Launch and improve", "desc": "Your team gets documentation and a walkthrough, and the system keeps improving from real use." }
+    ],
+    "industriesTitle": "Industries I've worked with",
+    "industries": [
+      "Manufacturing",
+      "Laundry & services",
+      "Food & beverage",
+      "Education",
+      "Cloud ERP & accounting"
+    ],
     "skillsTitle": "Skills",
     "skills": [
       { "group": "Frontend", "items": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "GSAP"] },
-      { "group": "Backend & API", "items": ["Go", "PHP (Laravel)", "ColdFusion", "REST API", "JWT"] },
+      { "group": "Backend & API", "items": ["Go", "PHP (Laravel)", "ColdFusion", "REST API", "JWT", "Git & GitHub", "Docker"] },
       { "group": "Database", "items": ["PostgreSQL", "MySQL", "SQL"] },
-      { "group": "ERP & domain", "items": ["Epicor ERP", "OCR", "Peppol / e-invoicing", "POS systems"] },
+      { "group": "ERP & domain", "items": ["Epicor ERP", "OCR", "Peppol / e-invoicing", "POS systems", "Odoo"] },
       { "group": "Business optimization", "items": ["Business process analysis", "Workflow design", "Process automation", "Reporting & dashboards", "Data management"] },
-      { "group": "Leadership", "items": ["Team lead", "Project management", "Market lead"] }
+      { "group": "Leadership", "items": ["Team lead", "Project management", "Market lead", "Trello", "Notion", "Miro"] }
     ],
     "languagesTitle": "Languages",
     "languages": [
@@ -81,7 +100,13 @@
       "subject": "Subject",
       "subjectPlaceholder": "e.g. New website for my café",
       "type": "What do you need?",
-      "types": { "website": "Website", "dashboard": "Dashboard or admin panel", "erp": "ERP or business system", "automation": "Process automation", "other": "Something else" },
+      "types": {
+        "website": "Website",
+        "dashboard": "Dashboard or admin panel",
+        "erp": "ERP or business system",
+        "automation": "Process automation",
+        "other": "Something else"
+      },
       "message": "Message",
       "messagePlaceholder": "Tell me about your business and what you want to build. A rough timeline or budget helps too.",
       "messageHint": "At least 20 characters.",

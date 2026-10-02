@@ -63,3 +63,25 @@ Jadi semua yang sifatnya riwayat dihapus:
   (`CONTACT_TYPES`). Sisa 5 opsi: Website, Dashboard, ERP, Process
   automation, Something else. Zod ikut menolak `type=job`, karena memakai
   daftar yang sama.
+
+## Update: About diisi lebih lengkap (biar klien tertarik)
+Sumber: PDF portfolio + data project yang sudah ada. Tetap nggak ada
+riwayat kerja atau sekolah.
+- **Bio 3 paragraf** (`about.bio` sekarang array). Paragraf pertama lebih
+  besar: posisi "paham cara bisnis berjalan", dengan contoh konkret (order
+  dari kasir ke pembukuan, stok, laporan). Paragraf 2: cara kerjanya
+  (petakan → sederhanakan → bangun) + area terkuat dari PDF (produksi,
+  penjualan, pengadaan, keuangan). Paragraf 3: lintas stack + memimpin tim
+  kecil.
+- **How I work**: 4 langkah (Understand → Map → Build & connect → Launch &
+  improve), kartu bernomor gaya What I do. Ini menjawab pertanyaan
+  pertama klien: "kerjanya gimana?".
+- **Industries I've worked with**: Manufacturing, Laundry & services,
+  Food & beverage, Education, Cloud ERP & accounting. Semua dipetakan dari
+  project nyata (Finance, Dikita, Kopi Tarik/Hazel, PUFA, Netiquette).
+- **Tools dari PDF** dimasukkan ke grup skill yang ada (bukan grup ke-7,
+  supaya grid 3 kolom tetap rapi): Git & GitHub + Docker → Backend, Odoo →
+  ERP, Trello + Notion + Miro → Leadership.
+- **Perlu dicek Rizki:** langkah 4 menjanjikan "documentation and a
+  walkthrough". PDF menyebut dokumentasi di project Epicor, tapi pastikan
+  memang selalu dikasih ke klien.

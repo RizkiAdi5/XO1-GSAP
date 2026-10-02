@@ -103,6 +103,8 @@ function Hero({ locale }: { locale: string }) {
           <source srcSet="/images/hero-brand-poster.webp" media="(prefers-reduced-motion: reduce)" />
           <img
             src="/images/hero-brand.webp"
+            // Poster first (12KB), animated loop (4.5MB) replaces it when loaded.
+            style={{ background: "url(/images/hero-brand-poster.webp) center / cover no-repeat" }}
             alt=""
             width={1280}
             height={720}
@@ -192,6 +194,8 @@ function WhatIDo() {
                     Not square: wider scenes (ERP) would lose their edge objects. */}
                 <img
                   src={`/images/${whatIDoMotion[i]}.webp`}
+                  // Poster as placeholder: same crop as object-cover, shows while the loop loads.
+                  style={{ background: `url(/images/${whatIDoMotion[i]}-poster.webp) center / cover no-repeat` }}
                   alt=""
                   width={1280}
                   height={720}

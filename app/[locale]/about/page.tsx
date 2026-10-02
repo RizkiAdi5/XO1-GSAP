@@ -6,6 +6,8 @@ export default function AboutPage() {
   return (
     <div className="px-4 py-16 md:px-12 lg:px-24 xl:px-40 2xl:px-56">
       <BioSection />
+      <ApproachSection />
+      <IndustriesSection />
       <SkillsSection />
       <LanguagesSection />
     </div>
@@ -14,17 +16,61 @@ export default function AboutPage() {
 
 function BioSection() {
   const t = useTranslations();
+  const bio = t.raw("about.bio") as string[];
 
   return (
     <section className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
       <div>
         <h1 className="text-[clamp(3.5rem,8vw,8rem)] leading-[0.95] text-ink">{t("about.title")}</h1>
-        <Reveal>
-          <p className="mt-4 max-w-2xl text-lg text-muted">{t("about.bio")}</p>
+        <Reveal stagger className="mt-6 flex max-w-2xl flex-col gap-4">
+          {bio.map((paragraph, i) => (
+            // First paragraph a step louder: it's the one-line pitch.
+            <p key={i} className={i === 0 ? "text-xl text-ink" : "text-lg text-muted"}>
+              {paragraph}
+            </p>
+          ))}
         </Reveal>
       </div>
       {/* ponytail: brightness lifts the asset bg (~#E5E2DB) to --bg; re-tune if regenerated. */}
       <HeaderMotion name="about-motion" brightness={1.06} className="mx-auto w-full max-w-xl md:-mr-8 lg:-mr-20 xl:-mr-32" />
+    </section>
+  );
+}
+
+function ApproachSection() {
+  const t = useTranslations();
+  const steps = t.raw("about.approach") as { title: string; desc: string }[];
+
+  return (
+    <section className="mt-24">
+      <h2 className="text-3xl text-ink md:text-4xl">{t("about.approachTitle")}</h2>
+      <Reveal stagger="slow" className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map((step, i) => (
+          <div key={step.title} className="flex min-h-56 flex-col rounded-card bg-surface p-6">
+            <span className="text-sm text-accent">{String(i + 1).padStart(2, "0")}</span>
+            <h3 className="mt-auto text-xl text-ink">{step.title}</h3>
+            <p className="mt-2 text-sm text-muted">{step.desc}</p>
+          </div>
+        ))}
+      </Reveal>
+    </section>
+  );
+}
+
+function IndustriesSection() {
+  const t = useTranslations();
+  const industries = t.raw("about.industries") as string[];
+
+  return (
+    <section className="mt-16">
+      <h2 className="text-2xl text-ink">{t("about.industriesTitle")}</h2>
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {industries.map((name) => (
+          <li key={name} className="rounded-full bg-surface px-5 py-2.5 text-ink">
+            {name}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

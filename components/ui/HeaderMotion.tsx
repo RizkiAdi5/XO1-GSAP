@@ -25,7 +25,12 @@ export default function HeaderMotion({
         width={1280}
         height={720}
         fetchPriority="low"
-        style={{ filter: brightness === 1 ? undefined : `brightness(${brightness})` }}
+        style={{
+          filter: brightness === 1 ? undefined : `brightness(${brightness})`,
+          // The ~10KB poster paints instantly behind the img while the animated.
+          // file (1–2MB) downloads, so the slot is never empty on page change.
+          background: `url(/images/${name}-poster.webp) center / cover no-repeat`,
+        }}
         className="h-auto w-full [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_70%)]"
       />
     </picture>
