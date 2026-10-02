@@ -8,6 +8,7 @@ import CtaReveal from "@/components/ui/CtaReveal";
 import Footer from "@/components/ui/Footer";
 import { LenisProvider } from "@/lib/lenis";
 import PageTransitions from "@/components/motion/PageTransitions";
+import LiquidCursor from "@/components/motion/LiquidCursor";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -58,6 +59,7 @@ export default async function LocaleLayout({
                         </main>
                         <CtaReveal />
                         <Footer />
+                        <LiquidCursor />
                     </LenisProvider>
                 </NextIntlClientProvider>
             </body>

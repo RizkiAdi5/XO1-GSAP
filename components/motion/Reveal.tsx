@@ -7,8 +7,9 @@ import { gsap, motionTokens } from "@/lib/motion";
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  /** Animate direct children individually with a stagger, instead of the wrapper as one block. */
-  stagger?: boolean;
+  /** Animate direct children individually with a stagger, instead of the wrapper as one block.
+   *  "slow" uses motionTokens.staggerSlow, for a few big items that should land one by one. */
+  stagger?: boolean | "slow";
   delay?: number;
 };
 
@@ -46,7 +47,7 @@ export default function Reveal({
           duration: reduceMotion ? 0.2 : motionTokens.duration.base,
           ease: motionTokens.ease.out,
           delay,
-          stagger: stagger ? motionTokens.stagger : 0,
+          stagger: stagger === "slow" ? motionTokens.staggerSlow : stagger ? motionTokens.stagger : 0,
           scrollTrigger: {
             trigger: ref.current,
             start: "top 85%",

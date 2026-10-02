@@ -54,12 +54,11 @@ export default function Odometer({ value, className = "" }: OdometerProps) {
   );
 
   return (
-    <span
-      ref={ref}
-      className={`inline-flex items-baseline ${className}`}
-      aria-label={value}
-    >
-      <span aria-hidden="true" className="inline-flex items-baseline">
+    <span ref={ref} className={`inline-flex items-baseline ${className}`}>
+      {/* The real value, for screen readers and copy/paste. Without it, selecting
+          the number copied every digit of every track ("0123456789…"). */}
+      <span className="sr-only">{value}</span>
+      <span aria-hidden="true" className="inline-flex select-none items-baseline">
         {chars.map((char, i) =>
           /\d/.test(char) ? (
             <span

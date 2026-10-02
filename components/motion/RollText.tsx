@@ -13,9 +13,11 @@ export default function RollText({ children, className = "" }: RollTextProps) {
       >
         {children}
       </span>
+      {/* Duplicate for the roll effect: hidden from screen readers AND from
+          selection, or copying the label gives it twice ("Let's talk Let's talk"). */}
       <span
         aria-hidden="true"
-        className="absolute left-0 top-0 block translate-y-full transition-transform motion-safe:duration-[var(--duration-fast)] motion-safe:ease-[var(--ease-in-out)] motion-safe:group-hover:translate-y-0 motion-safe:group-focus-visible:translate-y-0 motion-reduce:hidden"
+        className="absolute left-0 top-0 block translate-y-full select-none transition-transform motion-safe:duration-[var(--duration-fast)] motion-safe:ease-[var(--ease-in-out)] motion-safe:group-hover:translate-y-0 motion-safe:group-focus-visible:translate-y-0 motion-reduce:hidden"
       >
         {children}
       </span>

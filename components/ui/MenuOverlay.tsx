@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, type RefObject } from "react";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { MailIcon, WhatsAppIcon, LinkedInIcon } from "./icons";
+import { SOCIALS, VideoIcon } from "./icons";
+import RollText from "@/components/motion/RollText";
 
 type NavLink = { href: string; label: string };
 
@@ -13,11 +14,13 @@ export default function MenuOverlay({
   onClose,
   navLinks,
   triggerRef,
+  onBookCall,
 }: {
   open: boolean;
   onClose: () => void;
   navLinks: NavLink[];
   triggerRef: RefObject<HTMLButtonElement | null>;
+  onBookCall: () => void;
 }) {
   const t = useTranslations();
   const cardRef = useRef<HTMLDivElement>(null);
@@ -127,46 +130,56 @@ export default function MenuOverlay({
         className="mt-4 rounded-[28px] bg-ink p-8 text-surface motion-reduce:transition-opacity"
         style={cardStyle(120)}
       >
-        <p className="text-xs uppercase tracking-wide text-muted">
+        <p className="text-xs uppercase tracking-wide text-surface/50">
           {t("menu.startProject")}
         </p>
         <a
           href="mailto:riiizkiadiii@gmail.com"
           tabIndex={open ? 0 : -1}
-          className="mt-2 block text-lg"
+          className="mt-2 block break-all text-xl hover:text-surface/80 md:text-2xl"
         >
           riiizkiadiii@gmail.com
         </a>
+        <a
+          href="https://wa.me/6289670468240"
+          target="_blank"
+          rel="noopener noreferrer"
+          tabIndex={open ? 0 : -1}
+          className="mt-1 block text-sm text-surface/50 hover:text-surface/80"
+        >
+          WhatsApp +62 896-7046-8240
+        </a>
 
-        <div className="mt-6 flex gap-3">
-          <a
-            href="mailto:riiizkiadiii@gmail.com"
-            tabIndex={open ? 0 : -1}
-            aria-label={t("contact.channels.email")}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-surface/10"
-          >
-            <MailIcon className="h-5 w-5" />
-          </a>
-          <a
-            href="https://wa.me/6289670468240"
-            target="_blank"
-            rel="noopener noreferrer"
-            tabIndex={open ? 0 : -1}
-            aria-label={t("contact.channels.whatsapp")}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-surface/10"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            tabIndex={open ? 0 : -1}
-            aria-label={t("contact.channels.linkedin")}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-surface/10"
-          >
-            <LinkedInIcon className="h-5 w-5" />
-          </a>
+        {/* Opens the same booking dialog as before (BookCallDialog, owned by Header). */}
+        <button
+          type="button"
+          onClick={onBookCall}
+          tabIndex={open ? 0 : -1}
+          className="mt-6 flex w-full items-center justify-between rounded-full bg-surface py-2 pl-6 pr-2 text-sm uppercase text-ink"
+        >
+          <RollText>{t("contact.call.title")}</RollText>
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-bg">
+            <VideoIcon className="h-5 w-5" />
+          </span>
+        </button>
+
+        <div className="mt-6 flex items-center justify-between gap-4">
+          <p className="text-xs text-surface/50">{t("contact.channels.timezone")}</p>
+          <div className="flex gap-2">
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={open ? 0 : -1}
+                aria-label={label}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-surface/10 hover:bg-surface/20"
+              >
+                <Icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
 export type CaseStudyMeta = {
   title: string;
   role: string;
+  /** Card chips: project type, then client sector, e.g. ["WEB", "MANUFACTURING"]. */
+  tags: string[];
   period: string;
   team?: string;
   stack: string[];

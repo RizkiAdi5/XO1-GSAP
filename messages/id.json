@@ -1,16 +1,36 @@
 {
   "home": {
-    "badge": "Terbuka untuk peluang baru",
-    "headline": "Frontend engineer yang paham cara bisnis berjalan.",
-    "subhead": "Sistem ERP, akuntansi, dan bisnis, dibangun dengan detail.",
+    "badge": "Menerima project baru",
+    "headline": "Website &\nSistem",
+    "subhead": "Saya merancang dan membangun website serta software bisnis, dari ERP sampai POS. Dibuat sesuai cara bisnis Anda berjalan.",
     "seeWork": "Lihat karya",
-    "marquee": ["ERP", "Akuntansi", "POS", "E-Invoicing", "Next.js", "Go"],
+    "startProject": "Mulai proyek",
+    "marquee": [
+      "ERP",
+      "Akuntansi",
+      "POS",
+      "E-Invoicing",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Go",
+      "Laravel",
+      "Filament",
+      "PHP",
+      "PostgreSQL",
+      "MySQL",
+      "Prisma",
+      "REST API",
+      "ColdFusion"
+    ],
+    "allWork": "Semua karya",
     "selectedWork": "Karya pilihan",
     "numbers": [
-      { "value": "70+", "label": "Layar ERP dimodernisasi" },
-      { "value": "80%", "label": "Checkout POS lebih cepat" },
-      { "value": "70%", "label": "Input invoice manual berkurang" },
-      { "value": "1.000+", "label": "Order diproses" }
+      { "value": "70+", "label": "Layar ERP dibangun ulang untuk tim finance" },
+      { "value": "80%", "label": "Lebih cepat bayar di kasir" },
+      { "value": "70%", "label": "Lebih sedikit data invoice diketik manual" },
+      { "value": "1.000+", "label": "Order berjalan lewat sistem buatan saya" }
     ],
     "whatIDo": {
       "title": "Yang saya kerjakan",
@@ -21,54 +41,28 @@
         { "title": "Kepemimpinan tim & proyek", "desc": "Memimpin delivery lintas negara dan tim kecil." }
       ]
     },
-    "experience": {
-      "title": "Pengalaman",
-      "current": "Netiquette Asia — Software Developer + Indonesia Market Lead",
-      "campus": "Organisasi kampus — BEM Fakultas Ilmu Komputer, Investment Club",
-      "more": "Selengkapnya tentang saya"
-    },
     "contactWords": ["bangun", "kirim", "luncurkan", "kembangkan"],
-    "contactCta": "Ada project yang ingin didiskusikan?"
+    "contactLets": "Ayo",
+    "contactCta": "Punya ide project?"
   },
   "work": {
     "title": "Karya",
-    "intro": "Case study pilihan, plus arsip singkat proyek-proyek sebelumnya.",
-    "featuredTitle": "Karya pilihan",
-    "archiveTitle": "Arsip",
-    "filters": { "all": "Semua", "frontend": "Frontend", "erp": "ERP", "fullstack": "Full-stack" }
+    "intro": "Website, dashboard, sistem ERP, dan otomasi yang memangkas kerja manual dan menyatukan data bisnis di satu tempat.",
+    "featuredTitle": "Studi kasus",
+    "archiveTitle": "Project lainnya",
+    "filters": { "all": "Semua", "web": "Web", "dashboard": "Dashboard", "erp": "ERP", "finance": "Keuangan" }
   },
   "about": {
     "title": "Tentang",
-    "bio": "Saya frontend engineer yang paham cara bisnis berjalan — mulai dari layar ERP yang dipakai tim finance tiap hari, sampai sistem POS yang memproses volume order tinggi. Saat ini saya Software Developer dan Indonesia Market Lead di Netiquette Asia, setelah perjalanan yang dimulai dari Darussalam Sengkubang, lanjut ke President University dan program PUFA Computer Science, dan sekarang bekerja lintas zona waktu.",
-    "journeyTitle": "Perjalanan",
-    "journey": [
-      { "year": "2020", "label": "Darussalam Sengkubang" },
-      { "year": "2023", "label": "President University" },
-      { "year": "2024", "label": "PUFA Computer Science" },
-      { "year": "2025", "label": "Netiquette Asia — Software Developer" },
-      { "year": "2026", "label": "Indonesia Market Lead" }
-    ],
+    "bio": "Saya software developer yang paham cara bisnis berjalan, mulai dari layar ERP yang dipakai tim finance tiap hari sampai sistem POS yang memproses order dalam volume tinggi. Saya kerja lintas stack, tapi yang bikin beda adalah kebiasaan memahami masalah bisnisnya dulu sebelum mulai nulis kode. Saya biasa kerja bareng tim di zona waktu yang berbeda.",
     "skillsTitle": "Skill",
     "skills": [
       { "group": "Frontend", "items": ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "GSAP"] },
       { "group": "Backend & API", "items": ["Go", "PHP (Laravel)", "ColdFusion", "REST API", "JWT"] },
       { "group": "Database", "items": ["PostgreSQL", "MySQL", "SQL"] },
       { "group": "ERP & domain", "items": ["Epicor ERP", "OCR", "Peppol / e-invoicing", "Sistem POS"] },
+      { "group": "Optimasi bisnis", "items": ["Analisis proses bisnis", "Desain alur kerja", "Otomasi proses", "Laporan & dashboard", "Manajemen data"] },
       { "group": "Leadership", "items": ["Team lead", "Project management", "Market lead"] }
-    ],
-    "educationTitle": "Pendidikan",
-    "education": {
-      "program": "Sistem Informasi (konsentrasi ERP)",
-      "gpa": "IPK 3,95",
-      "scholarship": "Jababeka Future Leader Scholarship"
-    },
-    "orgsTitle": "Organisasi",
-    "orgs": ["BEM Fakultas Ilmu Komputer", "Investment Club"],
-    "certificationsTitle": "Sertifikasi",
-    "certifications": [
-      "Google Project Management (Coursera)",
-      "Alibaba Cloud Certified Developer",
-      "Core HR & Analytics"
     ],
     "languagesTitle": "Bahasa",
     "languages": [
@@ -81,13 +75,16 @@
     "intro": "Yuk diskusikan project kamu selanjutnya.",
     "form": {
       "name": "Nama",
+      "namePlaceholder": "Nama kamu",
       "email": "Email",
-      "type": "Tipe",
-      "typePlaceholder": "Pilih salah satu",
-      "typeJob": "Peluang kerja",
-      "typeFreelance": "Project freelance",
-      "typeOther": "Lainnya",
+      "emailPlaceholder": "kamu@perusahaan.com",
+      "subject": "Subjek",
+      "subjectPlaceholder": "Contoh: Website baru untuk kafe saya",
+      "type": "Butuh bantuan apa?",
+      "types": { "website": "Website", "dashboard": "Dashboard atau panel admin", "erp": "ERP atau sistem bisnis", "automation": "Otomasi proses", "other": "Lainnya" },
       "message": "Pesan",
+      "messagePlaceholder": "Ceritakan bisnis kamu dan apa yang ingin dibangun. Perkiraan timeline atau budget juga membantu.",
+      "messageHint": "Minimal 20 karakter.",
       "submit": "Kirim pesan",
       "sending": "Mengirim…",
       "successTitle": "Terima kasih — pesan diterima.",
@@ -96,23 +93,45 @@
     },
     "channels": {
       "title": "Cara lain menghubungi saya",
-      "timezone": "Berdomisili di Cikarang, Indonesia · GMT+7",
+      "timezone": "Berdomisili di Jakarta, Indonesia · GMT+7",
       "whatsapp": "WhatsApp",
       "email": "Email",
       "linkedin": "LinkedIn"
+    },
+    "call": {
+      "badge": "Disarankan",
+      "title": "Jadwalkan call",
+      "intro": "Ceritakan apa yang sedang kamu bangun. Pilih waktu, link Google Meet langsung masuk ke email kamu.",
+      "duration": "30 menit"
+    },
+    "whatsapp": {
+      "title": "Lebih suka chat",
+      "text": "Nggak perlu lewat email, kirim pesan langsung ke saya.",
+      "button": "Chat di WhatsApp"
+    },
+    "follow": "Ikuti",
+    "message": { "title": "Atau kirim pesan" },
+    "faq": {
+      "title": "Sebelum kamu <em>menghubungi</em> saya",
+      "items": [
+        { "q": "Berapa biaya sebuah project?", "a": "Tergantung cakupannya. Setelah call pertama, saya kirim estimasi tertulis berisi cakupan, timeline, dan harga. Jadi kamu tahu angkanya sebelum pekerjaan dimulai." },
+        { "q": "Apa yang dibahas di call pertama?", "a": "Selama 30 menit kita bahas bisnis kamu: apa yang bikin tim lambat dan apa yang ingin dibangun. Saya akan banyak bertanya. Di akhir call, kamu dapat gambaran jujur apakah saya orang yang tepat." },
+        { "q": "Apakah menerima klien di luar Indonesia?", "a": "Bisa. Saya sudah biasa kerja dengan tim di zona waktu berbeda, kebanyakan lewat Google Meet dan chat." },
+        { "q": "Layanan apa saja yang bisa dibantu?", "a": "Website, aplikasi web, dan software bisnis seperti layar ERP, sistem keuangan, POS, dan e-invoicing. Saya juga bisa memimpin tim kecil sampai project-nya jalan." },
+        { "q": "Lewat mana sebaiknya saya menghubungi?", "a": "Untuk project baru, jadwalkan call di atas. Untuk pertanyaan singkat, WhatsApp paling cepat. Email paling pas kalau ada file yang mau dilampirkan." }
+      ]
     }
   },
   "nav": { "home": "Beranda", "work": "Karya", "about": "Tentang", "contact": "Kontak" },
   "header": { "letsTalk": "Hubungi saya" },
   "menu": { "open": "Menu", "close": "Tutup", "startProject": "Mulai project" },
-  "marquee": { "pause": "Jeda", "play": "Putar" },
   "caseStudy": { "next": "Case study selanjutnya" },
   "footer": {
     "ctaPrefix": "Yuk, bangun sesuatu yang",
     "ctaWords": ["bareng", "hebat", "nyata", "berkelanjutan"],
     "tagline": "Frontend engineer yang paham cara bisnis berjalan — sistem ERP, akuntansi, dan bisnis, dibangun dengan detail.",
     "navigate": "Jelajahi",
-    "location": "Cikarang, Indonesia · GMT+7",
-    "copyright": "© {year} Rizki Adi Prasetyo. Hak cipta dilindungi."
+    "location": "Jakarta, Indonesia · GMT+7",
+    "copyright": "© {year} Rizki Adi. Hak cipta dilindungi."
   }
 }

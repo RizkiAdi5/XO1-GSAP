@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { MailIcon, WhatsAppIcon, LinkedInIcon, GitHubIcon } from "./icons";
+import { MailIcon, WhatsAppIcon, SOCIALS } from "./icons";
 
 const INSET_PX = "px-[max(1rem,calc((100%-1440px)/2+1rem))] md:px-[max(2rem,calc((100%-1440px)/2+2rem))]";
 
@@ -30,7 +30,7 @@ export default function Footer() {
     >
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1fr_auto]">
         <div>
-          <p className="font-rounded text-lg">Rizki Adi Prasetyo</p>
+          <p className="font-rounded text-lg">Rizki Adi</p>
           <p className="mt-2 max-w-sm text-sm text-surface/60">{t("footer.tagline")}</p>
         </div>
 
@@ -71,24 +71,18 @@ export default function Footer() {
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t("contact.channels.linkedin")}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-surface/20 text-surface/70 transition-colors hover:border-accent hover:text-accent"
-          >
-            <LinkedInIcon className="h-5 w-5" />
-          </a>
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-surface/20 text-surface/70 transition-colors hover:border-accent hover:text-accent"
-          >
-            <GitHubIcon className="h-5 w-5" />
-          </a>
+          {SOCIALS.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-surface/20 text-surface/70 transition-colors hover:border-accent hover:text-accent"
+            >
+              <Icon className="h-5 w-5" />
+            </a>
+          ))}
         </div>
       </div>
     </footer>

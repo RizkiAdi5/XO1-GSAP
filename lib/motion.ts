@@ -25,6 +25,9 @@ export const motionTokens = {
     inOut: "motionInOut",
   },
   stagger: 0.06,
+  // Slower stagger for a few large items (e.g. 4 cards) where 0.06s reads
+  // as "all at once" — each card should visibly land one after another.
+  staggerSlow: 0.15,
   distance: 24,
 } as const;
 

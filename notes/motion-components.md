@@ -464,3 +464,47 @@ crossfade tanpa shift).
 - Fase 2 selesai (kecuali page transition, ditunda). Lanjut ke Fase 3:
   struktur konten (MDX case study + JSON UI text), lalu halaman Home →
   Work → Case study → About → Contact.
+
+## Fix WordRotator (2026-10-02): kata melayang + celah lebar
+Rizki lapor CTA "Have a project in mind? Let's launch." berantakan: kata
+yang berputar posisinya lebih tinggi dari kalimat, dan ada celah sebelum
+titik. Ada **tiga bug terpisah** di `WordRotator.tsx`. Karena diperbaiki di
+komponennya, CTA di Home dan `CtaReveal` (footer) dua-duanya ikut beres:
+
+1. **Kata melayang ke atas.** Kontainernya `inline-block` +
+   `overflow:hidden`. Elemen seperti itu disejajarkan berdasarkan **tepi
+   bawahnya**, bukan baseline teks. Ditambah tingginya dipatok `1.3em`,
+   sedangkan line-height induknya beda. Fix: `height: 1lh` (= line-height
+   induk) + `vertical-align: top`. Kotaknya jadi persis setinggi satu baris
+   dan baseline-nya sama dengan kalimat.
+2. **Celah lebar (penyebab utama).** Tiap kata `display:block` di dalam
+   flex column, dan flex column defaultnya `align-items: stretch`. Jadi
+   **semua kata selebar kata terpanjang**. Diukur lewat CDP: `offsetWidth`
+   semua kata = 154px ("launch"), padahal "build" cuma 116px. Kontainer
+   nggak pernah menyempit. Fix: `alignItems: flex-start` + `width:
+   max-content` per kata.
+3. **Lebar diukur sebelum font siap.** Waktu mount, Instrument Serif belum
+   tentu sudah termuat. Sekarang lebar dibaca lewat function value
+   (`width: () => measure(i)`) waktu tween jalan, dan diset ulang setelah
+   `document.fonts.ready`.
+
+Sekalian di CTA Home:
+- Kata "Let's" dulu hardcoded di JSX, jadi halaman ID tampil "Ada project
+  yang ingin didiskusikan? **Let's** bangun." Sekarang dari pesan:
+  `home.contactLets` ("Let's" / "Ayo").
+- Jadi `<h2>` (font rounded) `text-4xl md:text-6xl leading-[1.2]`.
+  Leading 1.2 sengaja, supaya ekor huruf (g, p) nggak kepotong `overflow`
+  kotak 1lh. Kata yang berputar pakai Instrument Serif italic + warna
+  aksen (font aksen PRD untuk penekanan).
+- Tombol "Let's talk" jadi pill hitam + lingkaran panah (konsisten dengan
+  hero & form).
+
+### CTA Home: selalu 2 baris
+- Kalimatnya dipecah jadi 2 baris yang tetap: pertanyaan, lalu `<span
+  className="block">Let's <WordRotator/>.</span>`. Dulu jumlah barisnya
+  berubah-ubah karena kata yang berputar beda-beda lebarnya: kata pendek
+  muat 1 baris, kata panjang turun.
+- Copy ID dipendekkan: "Ada project yang ingin didiskusikan?" (selalu
+  kepotong jadi 2 baris sendiri) → **"Punya ide project?"**
+- Ukuran font `clamp(1.75rem, 7vw, 3.75rem)`: tiap baris tetap 1 baris
+  sampai HP sekitar 360px, maksimal 60px (= `text-6xl` sebelumnya).

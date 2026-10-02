@@ -43,6 +43,7 @@ export async function submitContact(
   const parsed = contactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
+    subject: formData.get("subject"),
     type: formData.get("type"),
     message: formData.get("message"),
   });
@@ -70,8 +71,8 @@ export async function submitContact(
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: CONTACT_EMAIL,
       replyTo: parsed.data.email,
-      subject: `New contact (${parsed.data.type}) — ${parsed.data.name}`,
-      text: `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nType: ${parsed.data.type}\n\n${parsed.data.message}`,
+      subject: `${parsed.data.subject} · ${parsed.data.name} (${parsed.data.type})`,
+      text: `Name: ${parsed.data.name}\nEmail: ${parsed.data.email}\nType: ${parsed.data.type}\nSubject: ${parsed.data.subject}\n\n${parsed.data.message}`,
     });
     return { status: "success" };
   } catch (error) {

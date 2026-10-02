@@ -8,6 +8,13 @@
   --line: #E2E0DA;
   --accent: #2F45FF;
 
+  /* Hero card gradient: brand cobalt fading to a lighter periwinkle.
+     --hero-to is sampled from the background of
+     public/images/hero-brand.webp so the 3D loop blends in — re-sample
+     it if that asset is replaced. White large text keeps ≥3:1 on it. */
+  --hero-from: var(--accent);
+  --hero-to: #7084E8;
+
   --radius-ui: 4px;
   --radius-card: 12px;
 
@@ -34,6 +41,8 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-hero-from: var(--hero-from);
+  --color-hero-to: var(--hero-to);
 
   --radius-ui: var(--radius-ui);
   --radius-card: var(--radius-card);
@@ -60,6 +69,70 @@ h4,
 h5,
 h6 {
   font-family: var(--font-rounded);
+}
+
+/* Glass surfaces (header pills). Mostly see-through so content scrolling
+   underneath stays readable-but-soft. No border (Rizki: too outlined); just a
+   faint top highlight for the glass edge and a soft shadow to lift it. Light = on the page,
+   dark = the Menu button. */
+.glass,
+.glass-dark {
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+}
+.glass {
+  background: rgb(255 255 255 / 0.35);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.5),
+    0 8px 24px -8px rgb(17 17 17 / 0.14);
+}
+.glass-dark {
+  background: rgb(17 17 17 / 0.6);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.12),
+    0 8px 24px -8px rgb(17 17 17 / 0.35);
+}
+
+/* FAQ accordion (contact page): native <details>, with a smooth height
+   animation where supported (Chromium 131+: ::details-content +
+   interpolate-size). Other browsers just open instantly — still works. */
+.faq {
+  interpolate-size: allow-keywords;
+}
+.faq::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size var(--duration-base) var(--ease-out),
+    content-visibility var(--duration-base) allow-discrete;
+}
+.faq[open]::details-content {
+  block-size: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq::details-content {
+    transition: none;
+  }
+}
+
+/* Liquid cursor (components/motion/LiquidCursor.tsx) replaces the native
+   pointer only while it's active (pointer: fine, no reduced motion). Text
+   fields keep the I-beam so typing position stays obvious. */
+.has-liquid-cursor,
+.has-liquid-cursor * {
+  cursor: none;
+}
+.has-liquid-cursor :is(input, textarea, [contenteditable="true"]) {
+  cursor: text;
+}
+/* Modals live in the top layer, above the liquid cursor, which hides there;
+   give the native pointer back inside them. */
+.has-liquid-cursor dialog[open],
+.has-liquid-cursor dialog[open] * {
+  cursor: auto;
+}
+.has-liquid-cursor dialog[open] :is(button, a) {
+  cursor: pointer;
 }
 
 /* Page transition (View Transitions API):

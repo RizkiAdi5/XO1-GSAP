@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import footerIllustration from "@/public/images/footer-illustration.webp";
 import Link from "next/link";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
@@ -82,7 +83,7 @@ export default function CtaReveal() {
       <section className="sticky top-0 flex h-screen items-center overflow-hidden bg-[#F4F3EF]">
         <div ref={imageRef} className="absolute inset-0">
           <Image
-            src="/images/footer-illustration.webp"
+            src={footerIllustration}
             alt=""
             fill
             className="object-cover object-center"

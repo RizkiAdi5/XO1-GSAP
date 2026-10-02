@@ -87,7 +87,7 @@ Setiap halaman punya satu tugas utama, dan setiap halaman berakhir dengan ajakan
 
 - **Header:** logo/nama, link Work · About · Contact, toggle EN/ID, tombol "Let's talk" dengan efek roll.
 - **Menu mobile:** overlay fullscreen, link besar masuk dengan stagger, plus email, WhatsApp, LinkedIn.
-- **Footer:** ajakan kontak, email, WhatsApp, LinkedIn, GitHub, lokasi "Cikarang, Indonesia · GMT+7", hak cipta.
+- **Footer:** ajakan kontak, email, WhatsApp, LinkedIn, GitHub, lokasi "Jakarta, Indonesia · GMT+7", hak cipta.
 
 ### Home
 
@@ -126,7 +126,7 @@ Tugas: menampilkan semua karya dengan hierarki yang jelas.
 Tugas: membangun kepercayaan dan menunjukkan kepribadian.
 
 - Bio singkat dan foto.
-- Perjalanan: Darussalam Sengkubang (2020) → President University (2023) → PUFA CompSci (2024) → Netiquette Asia (2025) → Indonesia Market Lead (2026).
+- ~~Perjalanan, pendidikan, organisasi, sertifikasi~~: dihapus dari situs (2026-10-02, keputusan Rizki). Situs ini buat menunjukkan kemampuan, bukan CV.
 - Skill dikelompokkan: Frontend, Backend & API, Database, ERP & domain, Leadership.
 - Pendidikan: Sistem Informasi (konsentrasi ERP), IPK 3,95, Jababeka Future Leader Scholarship.
 - Organisasi: BEM Fakultas Ilmu Komputer, Investment Club.

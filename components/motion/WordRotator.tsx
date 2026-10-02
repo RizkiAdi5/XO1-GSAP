@@ -25,8 +25,14 @@ export default function WordRotator({
     () => {
       if (!containerRef.current || !trackRef.current) return;
 
-      const widths = wordRefs.current.map((el) => el?.offsetWidth ?? 0);
-      gsap.set(containerRef.current, { width: widths[0] });
+      // Widths are measured lazily, not once at mount: at mount the web font
+      // (e.g. Instrument Serif) may not be loaded yet, so the fallback font's
+      // widths left wrong-sized gaps around the word. Re-set once fonts are
+      // ready; the tweens read the width via function values when they run.
+      const measure = (i: number) => wordRefs.current[i]?.offsetWidth ?? 0;
+      const container = containerRef.current;
+      gsap.set(container, { width: measure(0) });
+      document.fonts.ready.then(() => gsap.set(container, { width: measure(0) }));
 
       const mm = gsap.matchMedia();
 
@@ -44,9 +50,9 @@ export default function WordRotator({
         const tl = gsap.timeline({ repeat: -1 });
         timelineRef.current = tl;
 
-        const step = (targetIndex: number, toWidth: number) => {
+        const step = (targetIndex: number) => {
           tl.to(containerRef.current, {
-            width: toWidth,
+            width: () => measure(targetIndex),
             duration: 3,
             ease: motionTokens.ease.inOut,
           }).to(
@@ -63,10 +69,10 @@ export default function WordRotator({
         tl.to({}, { duration: interval }); // hold on first word
         words.forEach((_, i) => {
           if (i === 0) return;
-          step(i, widths[i]);
+          step(i);
           tl.to({}, { duration: interval });
         });
-        step(0, widths[0]); // loop back to first word
+        step(0); // loop back to first word
 
         return () => {
           tl.kill();
@@ -88,13 +94,18 @@ export default function WordRotator({
   return (
     <span
       ref={containerRef}
-      className={`align-baseline ${className}`}
+      className={className}
+      // Box height = the parent's line height (1lh), aligned to the top of the
+      // line. An overflow:hidden inline-block aligns by its *bottom* edge, not the
+      // text baseline, so the old fixed 1.3em + baseline alignment floated the
+      // word above the rest of the sentence whenever the parent's leading wasn't
+      // exactly 1.3. With 1lh + top, the word's baseline matches the sentence's.
       style={{
         position: "relative",
         display: "inline-block",
-        height: "1.3em",
+        height: "1lh",
         overflow: "hidden",
-        verticalAlign: "baseline",
+        verticalAlign: "top",
       }}
       aria-label={words.join(", ")}
       onMouseEnter={() => timelineRef.current?.pause()}
@@ -103,7 +114,10 @@ export default function WordRotator({
       <span
         ref={trackRef}
         aria-live="off"
-        style={{ display: "flex", flexDirection: "column" }}
+        // flex-start + max-content: without them every word stretches to the
+        // widest one, so offsetWidth was the same for all and the box never
+        // shrank for short words (leaving a gap before the following text).
+        style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}
       >
         {words.map((word, i) => (
           <span
@@ -113,9 +127,9 @@ export default function WordRotator({
             }}
             style={{
               display: "block",
-              height: "1.3em",
+              width: "max-content",
+              height: "1lh",
               whiteSpace: "nowrap",
-              lineHeight: "1.3em",
             }}
           >
             {word}

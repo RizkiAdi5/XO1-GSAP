@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
@@ -10,8 +10,8 @@ type ProjectCardProps = {
   href: string;
   title: string;
   role: string;
-  year: string;
-  image: string;
+  tags: string[];
+  image: StaticImageData;
   imageAlt: string;
 };
 
@@ -19,7 +19,7 @@ export default function ProjectCard({
   href,
   title,
   role,
-  year,
+  tags,
   image,
   imageAlt,
 }: ProjectCardProps) {
@@ -110,10 +110,19 @@ export default function ProjectCard({
     <Link
       ref={cardRef}
       href={href}
+      data-cursor="hide"
       className="group relative block overflow-hidden rounded-card border border-line"
     >
       <div ref={imageRef} className="relative aspect-[4/3] w-full">
-        <Image src={image} alt={imageAlt} fill className="object-cover" />
+        {/* Cards sit in a 1-col (mobile) / 2-col (md+) grid. Without `sizes`, fill
+            defaults to 100vw and large/retina screens download the 3840w variant. */}
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover"
+        />
       </div>
 
       <div
@@ -129,7 +138,13 @@ export default function ProjectCard({
           <p className="text-sm text-muted">{role}</p>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-sm text-muted">{year}</span>
+          <ul className="flex flex-wrap justify-end gap-1.5">
+            {tags.map((t) => (
+              <li key={t} className="rounded-full border border-line px-3 py-1 text-xs tracking-wide text-muted">
+                {t}
+              </li>
+            ))}
+          </ul>
           <span className="text-ink [@media(pointer:fine)]:hidden">→</span>
         </div>
       </div>

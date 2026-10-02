@@ -76,3 +76,39 @@ sekaligus pakai script Python regex, bukan manual satu-satu.
 - Lanjut ke halaman: Work (listing + arsip + filter kategori), Home
   (lengkapi sesuai spesifikasi PRD, pasang komponen motion), About,
   Contact (form + Server Action + Zod + Resend).
+
+## Update 2026-10-02: Archive diisi dari PDF portfolio Rizki
+- Sumber: `Portfolio Rizki Adi Prasetyo_compressed.pdf` (project 1, 2, 5,
+  6, 7). Kalimat-kalimatnya ditulis ulang pakai aturan copywriting
+  ("I", tanpa em dash, satu kalimat masalah + hasil), bukan disalin mentah.
+- **Dua project Epicor digabung jadi satu**, "Epicor ERP Implementation"
+  dengan role "Project lead", sesuai permintaan Rizki ("ambil yang project
+  lead saja"). Nama klien "PT PTI" dihapus, konsisten dengan keputusan
+  sebelumnya untuk nggak menyebut nama perusahaan klien.
+- `year` dan `stack` sekarang **opsional** (`ArchiveItem`). PDF nggak
+  nyebut tahun untuk project mana pun, dan cuma nyebut stack untuk Epicor
+  dan Amatoa (database relasional + ERD). Daripada nampilin "TODO" di situs
+  live atau ngarang, field yang kosong nggak dirender.
+- Judul "PT Amatoa Jaya Gemilang Basic ERP" diganti jadi "Inventory Management System" (ID: "Sistem Manajemen Inventaris"): nama PT dihapus atas permintaan Rizki.
+- Yang masih kosong: tahun semua item archive, stack Kopi Tarik & Hazel.
+
+## Update: filter Work = Web / Dashboard / ERP / Finance
+- Filter lama (Frontend / ERP / Full-stack) itu jenis **developer**, bukan
+  jenis **hasil kerja**. Klien mikirnya "saya butuh website/dashboard",
+  bukan "saya butuh full-stack". Sekarang filternya: **All · Web ·
+  Dashboard · ERP · Finance** (ID: Semua · Web · Dashboard · ERP ·
+  Keuangan).
+- `category: string` diganti `categories: WorkCategory[]`. Satu project
+  bisa masuk beberapa kategori. Contoh: Dikita = web (company profile) +
+  dashboard (admin), Finance = finance + dashboard. Filter pakai
+  `.includes()`.
+- Pemetaan diambil dari isi PDF (project mana yang punya situs publik, mana
+  yang punya panel admin).
+- Section yang kosong setelah difilter **nggak ditampilkan** (contoh:
+  Finance → nggak ada "More projects"), daripada nampilin judul dengan list
+  kosong.
+- Copy baru: intro "Websites, dashboards and ERP systems built for real
+  businesses, from a neighborhood laundry to a steel manufacturer." Judul
+  section jadi "Case studies" dan "More projects". Pemisah role di archive
+  pakai "·", bukan em dash.
+- Dites lewat CDP: klik tiap filter, hitung kartu & item.
